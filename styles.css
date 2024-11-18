@@ -1,0 +1,285 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+html {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: #1B1B1B;
+    line-height: 1.25;
+}
+body {
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5 {
+  margin: 0;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.btn {
+  background-color: #1B1B1B;
+  color:#fff;
+
+  padding: 22px 115px 22px 70px;
+
+  border: none;
+  border-radius: 40px;
+
+  font-size: 0.8em;
+
+  position: relative;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  right: 55px;
+  top:50%;
+  transform: translateY(-50%);
+  width: 43px;
+  height: 43px;
+  background-color: #fff;
+
+  cursor: pointer;
+
+  border-radius: 100%;
+
+  background-image: url("/img/btn_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header .inner, .header .header__main, .header .header__main .nav, .header .header__contacts {
+  display: flex;
+}
+.header {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.header a {
+  text-decoration: inherit;
+  color: inherit;
+}
+.header .inner {
+  justify-content: space-between;
+  
+}
+.header .header__main {
+  column-gap: 2em;
+  align-items: center;
+}
+.header .header__main .logo {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+.header .header__main .nav {
+  column-gap: 3em;
+}
+.header .header__contacts {
+  column-gap: 0.5em;
+}
+.header .header__contacts .info a{
+  display: block;
+}
+.header .header__contacts .info a.callback {
+  font-size: 0.8em;
+  text-decoration: underline;
+}
+.hero {
+  padding: 0 1.5em;
+  border-radius: 0.85em;
+}
+.hero .inner {
+  display: flex;
+  border-radius: 0.85em;
+  overflow: hidden;
+}
+.hero .hero__main{
+  background-color: #1544AC;
+  color: #fff;
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+}
+.hero .hero__main .title {
+  font-size: 2.5em;
+  line-height: 1.16;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+.hero .hero__main .desc {
+  font-weight: 500;
+  font-size: 0.8em;
+  margin-bottom: 2em;
+}
+.hero .hero__image {
+  flex-shrink: 0;
+}
+.adv .inner {
+  display: flex;
+}
+
+.adv .inner .adv__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adv .inner .adv__title .subtitle {
+  color: #1544AC;
+  margin-bottom: 0.5em;
+}
+.adv .inner .adv__title .title {
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.adv .inner .adv__list .adv__item {
+  display: flex;
+  align-items: center;
+}
+.adv .inner .adv__list .adv__item .adv__img {
+  width: 170px;
+  margin-right: 2em;
+}
+.adv .inner .adv__list .adv__item .adv__info {
+  margin-bottom: 1em;
+}
+.adv .inner .adv__list .adv__item .adv__info .title{
+  font-size: 25px;
+  font-weight: 500;
+}
+.adv .inner .adv__list .adv__item .adv__info .desc {
+  font-size: 18px;
+  color: #9B9B9B;
+
+}
+.consulting .consulting__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+.consulting .consulting__header .subtitle {
+  color: #1544AC;
+  margin-bottom: 0.5em;
+}
+.consulting .consulting__header .title {
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  max-width: 200px;
+}
+.consulting .consulting__header .tabsBtns {
+  display: flex;
+  column-gap: 0.5em;
+}
+.consulting .consulting__header .tabsBtns .tabBtn {
+  border: 1px solid #0000001A;
+  background: transparent;
+  padding: 24px 40px;
+  border-radius: 10px;
+}
+.consulting .consulting__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;;
+}
+.consulting .consulting__list .consulting__item a {
+  text-decoration: none;
+}
+.consulting .consulting__list .consulting__item img{
+  margin-bottom: 0.5em;
+}
+.runningLine {
+  font-size: 65px;
+  font-weight: 800;
+  color: #989898;
+
+  position: relative;
+}
+.runningLine .text {
+  position: absolute;
+  width: 300vw;
+}
