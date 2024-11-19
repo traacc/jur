@@ -84,6 +84,7 @@ html {
 }
 body {
   overflow-x: hidden;
+  margin: 0;
 }
 h1,h2,h3,h4,h5 {
   margin: 0;
@@ -171,6 +172,7 @@ section {
   display: flex;
   border-radius: 0.85em;
   overflow: hidden;
+  max-width: 1920px;
 }
 .hero .hero__main{
   background-color: #1544AC;
@@ -264,7 +266,7 @@ section {
 .consulting .consulting__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1em;;
+  gap: 1em;
 }
 .consulting .consulting__list .consulting__item a {
   text-decoration: none;
@@ -280,6 +282,232 @@ section {
   position: relative;
 }
 .runningLine .text {
-  position: absolute;
   width: 300vw;
+}
+.feedbackNote {
+  text-align: center;
+}
+.feedbackNote h2 {
+  font-size: 40px;
+}
+.feedbackNote h4 {
+  font-size: 25px;
+}
+.feedbackCenter .inner{
+  max-width: 1544px;
+  margin: 0 auto;
+  background-color: #1544AC;
+  color: #FFFFFF;
+  border-radius: 15px;
+  padding: 45px 180px;
+}
+.feedbackCenter .inner h3 {
+  font-size: 25px;
+  margin-bottom: 0.5em;
+}
+.feedbackCenter .feedbackCenter__form {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1em;
+  line-height: 1;
+}
+.feedbackCenter .feedbackCenter__form input {
+  border: 1px rgb(244, 244, 244, 0.6) solid;
+  border-radius: 15px;
+  color: #fff;
+  padding: 18px 28px;
+  background-color: transparent;
+  height: 66px;
+}
+.feedbackCenter .feedbackCenter__note {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 1em;
+}
+.about .inner{
+  display: flex;
+  column-gap: 4em;
+  max-width: 1920px;
+  margin: 0 auto;
+  align-items: center;
+}
+.about .inner .image {
+  flex-shrink: 0;
+}
+.about .inner .content {
+  text-align: justify;
+  max-width: 800px;
+}
+.about .inner .content h2 {
+  font-size: 40px;
+}
+
+.numbers {
+  background-color:  #1544AC;
+  
+}
+.numbers .inner .numbers__list {
+  display: flex;
+  color: #fff;
+  height: 500px;
+}
+.numbers .inner .numbers__list .numbers__item {
+  height: 100%;
+  border-right: 1px solid #FFFFFF33;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.numbers .inner .numbers__list .numbers__item:nth-child(even) {
+  align-content: center;
+}
+.numbers .inner .numbers__list .numbers__item .numbers__main{
+  font-size: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  column-gap: .8em;
+}
+.numbers .inner .numbers__list .numbers__item .numbers__main .number {
+  font-size: 80px;
+  font-weight: 800;
+}
+.numbers .inner .numbers__list .numbers__item .numbers__main .text {
+  margin-top: 0.4em;
+}
+.numbers .inner .numbers__list .numbers__item .numbers__note {
+  font-size: 25px;
+}
+.team__header {
+  max-width: 1544px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.team__header .team__navBtns {
+  display: flex;
+  column-gap: 1em;
+}
+.team__header .team__navBtns .back, .team__header .team__navBtns .next{
+  position: static;
+  margin-top: 0;
+  border-radius: 100%;
+  border: none;
+  color:#000;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 25px;
+}
+.team__headerTitle .subtitle {
+  color: #1544AC;
+  margin-bottom: 0.5em;
+}
+.team__headerTitle .title {
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.team .team__list {
+  min-height: 425px;
+}
+.team .team__list .team__item.swiper-slide {
+  transition: all .3s ease-in;
+}
+.team .team__list .team__item.swiper-slide-active, .team .team__list .team__item.swiper-slide-active + .team__item, .team .team__list .team__item.swiper-slide-active + .team__item + .team__item, .team .team__list .team__item.swiper-slide-active + .team__item + .team__item + .team__item{
+  
+  transform: translateY(50px);
+}
+.team .team__list .team__item .team__img {
+  width: 315px;
+  height: 315px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.team .team__list .team__item .team__img img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+.team .team__list .team__item .team__info {
+  text-align: center;
+}
+.team .team__list .team__item .team__info .title {
+  font-size: 25px;
+}
+.team .team__list .team__item .team__info .desc {
+  font-size: 18px;
+}
+.clients__header {
+  max-width: 1544px;
+  margin: 0 auto;
+}
+.clients__header .subtitle {
+  color: #1544AC;
+  margin-bottom: 0.5em;
+}
+.clients__header .title {
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.clients__list .clients__row {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.clients__list .clients__row .clients__item {
+  border: 1px solid #ECECEC;
+}
+.clients__list .clients__row .clients__item img {
+  padding: 35px 100px;
+  
+}
+.feedbackFooter {
+  background-color: #1544AC;
+  color: #FFFFFF;
+  border-radius: 15px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.feedbackFooter .inner {
+  display: flex;
+  align-items: center;
+}
+.feedbackFooter .inner h3 {
+  font-size: 25px;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
+.feedbackFooter .feedbackFooter__question {
+  flex-shrink: 0.85;
+  font-size: 40px;
+}
+.feedbackFooter .feedbackFooter__form {
+  line-height: 1;
+}
+.feedbackFooter .feedbackFooter__form .inputRow {
+  display: flex;
+  column-gap: 1em;
+}
+.feedbackFooter .feedbackFooter__form input {
+  border: 1px rgb(244, 244, 244, 0.6) solid;
+  border-radius: 15px;
+  color: #fff;
+  padding: 18px 28px;
+  background-color: transparent;
+  height: 66px;
+}
+.feedbackFooter .feedbackFooter__note {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.feedbackFooter .feedbackFooter__form .sendForm {
+  width: 100%;
+}
+.feedbackFooter {
+  margin-bottom: 0;
 }
