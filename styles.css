@@ -124,7 +124,7 @@ section {
 
   border-radius: 100%;
 
-  background-image: url("/img/btn_arrow.svg");
+  background-image: url("./img/btn_arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
