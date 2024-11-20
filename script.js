@@ -25,6 +25,8 @@ const popupWindowText = popupWindow.querySelector(".popup__content");
 const popupClose = popupWindow.querySelector(".closeBtn");
 const popupOverlay = document.querySelector(".popupOverlay");
 
+const toUpBtn = document.querySelector(".toUpBtn");
+
 consultingBtns.forEach((el, index)=>{
     el.addEventListener('click', ()=>{
         consultingBtns.forEach((el)=>{el.classList.remove('active')});
@@ -70,7 +72,33 @@ function setClientsElements(){
     clientsRows[0].innerHTML = firstRow;
     clientsRows[1].innerHTML = secondRow;
 }
+toUpBtn.addEventListener('click', ()=>{
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
+function numbersAnimation() {
+    const elements = {'years': document.querySelector(".numbers__item--years"), 'companies': document.querySelector(".numbers__item--companies"), 'specialists': document.querySelector(".numbers__item--specialists"), 'projects': document.querySelector(".numbers__item--projects")};
+
+    const numbersValues = {'years': 15, 'companies': 70, 'specialists': 10, 'projects': 100};
+    const yearsVal = 15;
+    const companiesVal = 70;
+    const specialistsVal = 10;
+    const projectsVal = 100;
+
+    setInterval(()=>{
+        for(let [key,el] of Object.entries(elements)) {
+            if(el.dataset.count<=numbersValues[key]) {
+                let newVal = el.dataset.count++;
+                el.querySelector('.number').textContent = newVal;
+
+                if(el.dataset.count>numbersValues[key] && el.dataset.count>30) {
+                    el.querySelector('.number').textContent += '+';
+                }
+            }
+        }
+    }, 200);
+}
 document.addEventListener("DOMContentLoaded", ()=>{
-    setClientsElements()
+    setClientsElements();
+    numbersAnimation();
 });
