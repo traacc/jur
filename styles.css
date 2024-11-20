@@ -330,6 +330,9 @@ section {
 .consulting .consulting__list .consulting__item:hover .title {
   font-weight: 700;
 }
+.consulting .consulting__list .consulting__item .text {
+  display: none;
+}
 .runningLine {
   font-size: 65px;
   font-weight: 800;
@@ -556,6 +559,9 @@ section {
 .clients__list .clients__row .clients__item {
   border: 1px solid #ECECEC;
 }
+.clients__list .clients__row .clients__item img {
+  max-width: unset;
+}
 .clients__list .clients__row:hover {
   animation-play-state: paused;
 }
@@ -654,4 +660,81 @@ section {
   justify-content: space-between;
   border-top: 1px solid #383838;
   padding-top: 2em;
+}
+.popupOverlay {
+  background-color: #000F31CC;
+  position: fixed;
+  z-index: 15;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.popupOverlay.active {
+  display: block;
+}
+.popup {
+  position: fixed;
+  border-radius: 30px;
+  max-width: 690px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 20;
+  display: none;
+}
+.popup.active {
+  display: block;
+}
+.popup  .popup__header {
+  
+  color: #fff;
+  font-size: 25px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.popup  .popup__header .title {
+  padding: 1em;
+}
+
+.popup  .popup__header .closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.popup .popup__content {
+  padding: 2em 2em;
+  color: #626262;
+  font-size: 18px;
+}
+.popup .popupFeedback__form {
+  line-height: 1;
+  padding: 1em 4em;
+}
+.popup .popupFeedback__form h4 {
+  font-size: 25px;
+  margin-bottom: 1.5em;
+}
+.popup .popupFeedback__form input {
+  border: 1px #000 solid;
+  border-radius: 15px;
+  color: #fff;
+  padding: 18px 28px;
+  background-color: transparent;
+  height: 66px;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.popup .popupFeedback__form .btn {
+  width: 100%;
+}
+.popup .popupFeedback__note {
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 1em;
 }
