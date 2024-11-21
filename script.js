@@ -68,7 +68,6 @@ function setClientsElements(){
         firstRow += firstRow;
         secondRow += secondRow;
     }
-    console.log(firstRow);
     clientsRows[0].innerHTML = firstRow;
     clientsRows[1].innerHTML = secondRow;
 }
