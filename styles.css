@@ -1036,6 +1036,11 @@ section {
     padding-left: 1em;
     padding-right: 1em;
   }
+
+  .team .team__list .team__item .team__img {
+    width: 150px;
+    height: 150px;
+  }
   .feedbackFooter .feedbackFooter__question::after {
     display: none;
   }

@@ -1,13 +1,19 @@
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     loop: true,
-    slidesPerView:5.5,
+    slidesPerView:2,
     //centeredSlides: true,
 
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // when window width is >= 320px
+        640: {
+          slidesPerView: 5.5,
+        }
     },
 
 });
