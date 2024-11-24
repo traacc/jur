@@ -14,6 +14,16 @@
     <link href="./styles.css" rel="stylesheet">
 </head>
 <body>
+    <div class="burgerMenu">
+        <div class="inner">
+            <div class="navBurger">
+                <a href="#" class="nav__item">Главная</a>
+                <a href="#" class="nav__item">Услуги</a>
+                <a href="#" class="nav__item">Наша команда</a>
+                <a href="#" class="nav__item">Сотрудники</a>
+            </div>
+        </div>
+    </div>
     <div class="toUpBtn">
         
     </div>
@@ -22,7 +32,7 @@
     </div>
     <div class="popup">
         <div class="popup__header" style="background-image: url('./img/consulting_1.png');">
-            <div class="closeBtn">✖</div>
+            <div class="closeBtn"><img src="./img/closeBtn.svg" alt=""></div>
             <h2 class="title">
                 Юридическое сопровождение бизнеса и физических лиц
             </h2>
@@ -39,6 +49,18 @@
                 <div class="popupFeedback__note">Отправляя заявку вы соглашаетесь с действующей политикой конфиденциальности и обработки персональных данных</div>
                 <button type="submit" class="btn sendForm">ОТПРАВИТЬ ЗАЯВКУ</button>
             </form>
+    </div>
+    <div class="popupFeedback">
+        <div class="closeBtn"><img src="./img/closeBtnB.svg" alt=""></div>
+        <form action="" class="popupFeedback__form">
+            <h4>Записаться на бесплатную консультацию</h4>
+            <div class="inputRow">
+                <input class="formName" name="name" type="text" placeholder="Ваше имя">
+                <input class="formPhone" name="phone" type="tel" placeholder="+7 (___) ___ - __ - __">
+            </div>
+            <div class="popupFeedback__note">Отправляя заявку вы соглашаетесь с действующей политикой конфиденциальности и обработки персональных данных</div>
+            <button type="submit" class="btn sendForm">ОТПРАВИТЬ ЗАЯВКУ</button>
+        </form>
     </div>
     <header class="header">
         <div class="container">
@@ -58,7 +80,10 @@
                     <div class="icon"><img src="./img/wa.svg" alt=""></div>
                     <div class="info">
                         <a href="#">+7 (000) 000-00-00</a>
-                        <a class="callback" href="#">Обратный звонок</a>
+                        <a class="callback feedbackFormOpen" href="#">Обратный звонок</a>
+                    </div>
+                    <div class="openBurger">
+                        <img src="./img/burger.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -70,7 +95,7 @@
                 <div class="content">
                     <h1 class="title">Стратегический консалтинг для вашей вашей компании под ключ</h1>
                     <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
-                    <button class="btn more">УЗНАТЬ ПОДРОБНЕЕ</button>
+                    <button class="btn more feedbackFormOpen">УЗНАТЬ ПОДРОБНЕЕ</button>
                 </div>
             </div>
             <div class="hero__image">
@@ -87,7 +112,7 @@
                             [ Комплесный подход <img src="./img/adv_icon.png" alt=""> ]
                         </h4>
                         <h2 class="title">ПРОФЕССИОНАЛЬНОЕ РЕШЕНИЕ ВАШИХ БИЗНЕС ЗАДАЧ ПОД КЛЮЧ</h2>
-                        <button class="btn">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
+                        <button class="btn shorter feedbackFormOpen">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</button>
                     </div>
 
                 </div>
@@ -293,7 +318,7 @@
             <form action="" class="feedbackCenter__form">
                 <input class="formName" name="name" type="text" placeholder="Ваше имя">
                 <input class="formPhone" name="phone" type="tel" placeholder="+7 (___) ___ - __ - __"> 
-                <button type="submit" class="btn sendForm">ОТПРАВИТЬ ЗАЯВКУ</button>
+                <button type="submit" class="btn sendForm shorter">ОТПРАВИТЬ ЗАЯВКУ</button>
             </form>
             <div class="feedbackCenter__note">Отправляя заявку вы соглашаетесь с действующей политикой конфиденциальности и обработки персональных данных</div>
         </div>

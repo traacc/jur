@@ -2,21 +2,76 @@ const swiper = new Swiper('.swiper', {
     // Optional parameters
     loop: true,
     slidesPerView:2,
-    //centeredSlides: true,
-
+    centeredSlides: true,
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        // when window width is >= 320px
-        640: {
-          slidesPerView: 5.5,
+        768: {
+            slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 5,
         }
     },
 
 });
+
+const telInputs = document.querySelectorAll(".formPhone");
+
+const prefixNumber = (str) => {
+  if (str === "7") {
+    return "7 (";
+  }
+  if (str === "8") {
+    return "8 (";
+  }
+  if (str === "9") {
+    return "7 (9";
+  }
+  return "7 (";
+};
+
+// ======================================
+telInputs.forEach((el)=>{
+    el.addEventListener("input", (e) => {
+        const value = el.value.replace(/\D+/g, "");
+        const numberLength = 11;
+      
+        let result;
+        if (el.value.includes("+8") || el.value[0] === "8") {
+          result = "";
+        } else {
+          result = "+";
+        }
+      
+        //
+        for (let i = 0; i < value.length && i < numberLength; i++) {
+          switch (i) {
+            case 0:
+              result += prefixNumber(value[i]);
+              continue;
+            case 4:
+              result += ") ";
+              break;
+            case 7:
+              result += "-";
+              break;
+            case 9:
+              result += "-";
+              break;
+            default:
+              break;
+          }
+          result += value[i];
+        }
+        //
+        el.value = result;
+      });
+})
+
 
 const consultingBtns = document.querySelectorAll(".container .tabBtn");
 const consultingLists = document.querySelectorAll(".container .consulting__list");
@@ -30,6 +85,38 @@ const popupWindowTitle = popupWindow.querySelector(".title");
 const popupWindowText = popupWindow.querySelector(".popup__content");
 const popupClose = popupWindow.querySelector(".closeBtn");
 const popupOverlay = document.querySelector(".popupOverlay");
+
+const popupFeedbackWindow = document.querySelector(".popupFeedback");
+const popupFeedbackOpen = document.querySelectorAll(".feedbackFormOpen");
+const popupFeedbackWindowClose = popupFeedbackWindow.querySelector(".closeBtn");
+
+const burgerMenu = document.querySelector(".burgerMenu");
+const burgerMenuLinks = burgerMenu.querySelectorAll("a");
+const openBurgerMenu = document.querySelector(".openBurger");
+
+openBurgerMenu.addEventListener('click', ()=>{
+    popupOverlay.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+})
+burgerMenuLinks.forEach((el)=>{
+    el.addEventListener('click', ()=>{
+        burgerMenu.classList.remove('active');
+        popupOverlay.classList.remove('active');
+    });
+
+})
+popupFeedbackOpen.forEach((el)=>{
+    el.addEventListener('click', (e)=>{
+        e.preventDefault();
+        popupFeedbackWindow.classList.add('active');
+        popupOverlay.classList.add('active');
+    })
+
+});
+popupFeedbackWindowClose.addEventListener('click', ()=>{
+    popupFeedbackWindow.classList.remove('active');
+    popupOverlay.classList.remove('active');
+});
 
 const toUpBtn = document.querySelector(".toUpBtn");
 
@@ -45,7 +132,8 @@ consultingBtns.forEach((el, index)=>{
     });
 });
 consultingItems.forEach((el)=>{
-    el.addEventListener('click', ()=>{
+    el.addEventListener('click', (e)=>{
+        e.preventDefault();
         popupWindow.classList.add('active');
         popupOverlay.classList.add('active');
         popupWindowTitle.textContent = el.querySelector('.title').textContent;
@@ -61,6 +149,9 @@ popupClose.addEventListener('click', ()=>{
 popupOverlay.addEventListener('click', ()=>{
     popupWindow.classList.remove('active');
     popupOverlay.classList.remove('active');
+    popupFeedbackWindow.classList.remove('active');
+
+    burgerMenu.classList.remove('active');
 });
 
 function setClientsElements(){
