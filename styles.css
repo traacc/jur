@@ -208,10 +208,15 @@ section {
 }
 .header .header__contacts .openBurger {
   cursor: pointer;
+  display: none;
 }
 .header .header__contacts .info a.callback {
   font-size: 0.8rem;
   text-decoration: underline;
+}
+section.hero {
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 .hero {
   padding: 0 1.5em;
@@ -386,6 +391,9 @@ section {
 .consulting .consulting__list .consulting__item .text {
   display: none;
 }
+section.runningLine {
+  margin-bottom: 1em;
+}
 .runningLine {
   font-size: 3.25rem;
   font-weight: 800;
@@ -415,6 +423,10 @@ section {
     transform: translate(-100%, 0);
   }
 }
+section.feedbackNote {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
 .feedbackNote {
   text-align: center;
 }
@@ -427,6 +439,10 @@ section {
 .feedbackNote h4 {
   font-size: 1.25rem;
   font-weight: 400;
+}
+section.feedbackCenter {
+  margin-top: 2em;
+  margin-bottom: 5em;
 }
 .feedbackCenter {
   position: relative;
@@ -924,7 +940,9 @@ input::placeholder {
   background-size: cover;
 }
 .popup  .popup__header .title {
-  padding: 1em;
+  padding: 2em 1em;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .popup  .popup__header .closeBtn {
@@ -1149,6 +1167,10 @@ input::placeholder {
   .header .header__contacts {
     align-items: center;
   }
+  .header .header__contacts .openBurger {
+    display: block;
+  }
+
   .hero .hero__main {
     padding: 1.5em;
   }
@@ -1171,11 +1193,15 @@ input::placeholder {
   .consulting .consulting__list {
     grid-template-columns: 1fr;
   }
+
   .feedbackNote h2 {
     font-size: 1.5rem;
   }
   .feedbackNote h4 {
     font-size: 1rem;
+  }
+  section.feedbackCenter {
+    margin-bottom: 2em;
   }
   .feedbackCenter .inner {
     padding: 1em;
