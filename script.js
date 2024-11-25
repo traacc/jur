@@ -92,36 +92,67 @@ const popupFeedbackWindowClose = popupFeedbackWindow.querySelector(".closeBtn");
 
 const burgerMenu = document.querySelector(".burgerMenu");
 const burgerMenuLinks = burgerMenu.querySelectorAll("a");
+const burgerMenuClose = document.querySelector(".burgerMenu .closeBtn");
 const openBurgerMenu = document.querySelector(".openBurger");
 
+const clientsRow = document.querySelectorAll(".clients__list .clients__row");
+
+clientsRow.forEach((el)=>{
+  el.addEventListener('dragstart', (e)=>{
+    console.log(e);
+    
+    el.style.animation = 'unset';
+    let dist = e.clientX;
+    el.style.transform = `translate(-${dist}px, 0)`
+  })
+});
+
+function blockScroll() {
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAll() {
+  document.body.style.overflow = 'unset';
+  popupWindow.classList.remove('active');
+  popupOverlay.classList.remove('active');
+  popupFeedbackWindow.classList.remove('active');
+
+  burgerMenu.classList.remove('active');  
+}
+
 openBurgerMenu.addEventListener('click', ()=>{
+    blockScroll();
     popupOverlay.classList.toggle('active');
     burgerMenu.classList.toggle('active');
 })
 burgerMenuLinks.forEach((el)=>{
     el.addEventListener('click', ()=>{
-        burgerMenu.classList.remove('active');
-        popupOverlay.classList.remove('active');
+        closeAll();
     });
 
+});
+
+burgerMenuClose.addEventListener('click', ()=>{
+  closeAll();
 })
 popupFeedbackOpen.forEach((el)=>{
     el.addEventListener('click', (e)=>{
         e.preventDefault();
+        blockScroll();
         popupFeedbackWindow.classList.add('active');
         popupOverlay.classList.add('active');
     })
 
 });
 popupFeedbackWindowClose.addEventListener('click', ()=>{
-    popupFeedbackWindow.classList.remove('active');
-    popupOverlay.classList.remove('active');
+    closeAll();
 });
 
 const toUpBtn = document.querySelector(".toUpBtn");
 
 consultingBtns.forEach((el, index)=>{
     el.addEventListener('click', ()=>{
+        blockScroll();
         consultingBtns.forEach((el)=>{el.classList.remove('active')});
         consultingLists.forEach((el)=>{el.classList.remove('active')});
         runningLines.forEach((el)=>{el.classList.remove('active')});
@@ -134,6 +165,7 @@ consultingBtns.forEach((el, index)=>{
 consultingItems.forEach((el)=>{
     el.addEventListener('click', (e)=>{
         e.preventDefault();
+        blockScroll();
         popupWindow.classList.add('active');
         popupOverlay.classList.add('active');
         popupWindowTitle.textContent = el.querySelector('.title').textContent;
@@ -143,8 +175,7 @@ consultingItems.forEach((el)=>{
     });
 });
 popupClose.addEventListener('click', ()=>{
-    popupWindow.classList.remove('active');
-    popupOverlay.classList.remove('active');
+    closeAll();
 });
 popupOverlay.addEventListener('click', ()=>{
     popupWindow.classList.remove('active');

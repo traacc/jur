@@ -81,6 +81,7 @@ html {
     font-size: 20px;
     color: #1B1B1B;
     line-height: 1.25;
+    scroll-behavior: smooth;
 }
 body {
   overflow-x: hidden;
@@ -155,6 +156,13 @@ section {
   display: block;
   z-index: 100;
   transition: all .3s ease-in;
+}
+.burgerMenu .closeBtn {
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
 }
 .burgerMenu .inner {
   display: flex;
@@ -334,13 +342,18 @@ section.consulting {
   color: #fff;
 }
 .consulting .consulting__list {
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
-  display: none;
+  display: grid;
+  opacity: 0;
+  transition: all .5s ease-in;
+  visibility: hidden;
+  height: 0;
 }
 .consulting .consulting__list.active {
-  display: grid;
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
 }
 .consulting .consulting__list .consulting__item a {
   text-decoration: none;
@@ -701,6 +714,7 @@ input::placeholder {
   gap: 1em;
   margin-bottom: 1em;
   animation: ticker 30s infinite linear forwards;
+  transition: transform .2s linear;
 }
 .clients__list .clients__row:last-child {
   animation: ticker 30s infinite linear reverse;
@@ -710,6 +724,7 @@ input::placeholder {
 }
 .clients__list .clients__row .clients__item img {
   max-width: unset;
+  pointer-events: none;
 }
 .clients__list .clients__row:hover {
   animation-play-state: paused;
@@ -1012,7 +1027,7 @@ input::placeholder {
   width: 100%;
 }
 .popup .popupFeedback__form .btn::before {
-  right: 30%;
+  right: 20%;
 }
 .popup .popupFeedback__note {
   font-size: 0.65rem;
@@ -1031,7 +1046,7 @@ input::placeholder {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  z-index: 50;
+  z-index: 15;
 }
 @media (max-width: 1920px) {
   .about .inner .image img {
@@ -1039,12 +1054,21 @@ input::placeholder {
   }
 
 }
+@media (max-width: 1240px) {
+  .popup {
+    width: 100%;
+  }
+  .popupFeedback {
+    width: 100%;
+  }
+
+}
 @media (max-width: 966px) {
 
   .container {
     max-width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
   }
   .header .inner {
     align-items: baseline;
@@ -1208,19 +1232,30 @@ input::placeholder {
   }
   .hero .hero__main .title {
     font-size: 1.25rem;
+    text-align: justify;
   }
   .hero .hero__main .desc{
     margin-bottom: 1em;
+    text-align: justify;
+  }
+  .adv .inner .adv__title {
+    margin-bottom: 1.5em;
   }
   .adv .inner .adv__title .title {
     font-size: 1.25rem;
+    text-align: justify;
+  }
+  .adv .inner .adv__list .adv__item .adv__info .desc {
+    text-align: justify;
   }
   .consulting .consulting__header .tabsBtns {
-    flex-direction: column;
+    overflow-x: scroll;
+    max-width: 100%;
+
     row-gap: 1em;
   }
   .consulting .consulting__header .tabsBtns .tabBtn {
-    padding: 1em 2em;
+    padding: 1em 1.6em;
   }
   .consulting .consulting__list {
     grid-template-columns: 1fr;
@@ -1234,6 +1269,8 @@ input::placeholder {
   }
   section.feedbackCenter {
     margin-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
   .feedbackCenter .inner {
     padding: 1em;
@@ -1265,12 +1302,23 @@ input::placeholder {
     padding-left: 1em;
     padding-right: 1em;
   }
+  .about .image .roatingText {
+    width: 100px;
+    right: -64px;
+    bottom: -46px;
+  }
+  .numbers .inner .numbers__list {
+    padding-bottom: 2.5em;
+  }
   .numbers .inner .numbers__list::after {
-    height: 32px;
+    height: 28px;
     left: 0;
     bottom: 0;
     background-size: contain;
     transform: none;
+  }
+  .team  .team__headerTitle .title {
+    margin-bottom: 1.5em;
   }
   .team .team__list {
     min-height: 310px;
@@ -1281,6 +1329,9 @@ input::placeholder {
   }
   .team .team__list .team__item.swiper-slide-prev, .team .team__list .team__item.swiper-slide-active, .team .team__list .team__item.swiper-slide-next{
     transform: none;
+  }
+  .clients__header .title {
+    margin-bottom: 1.5em;
   }
   .feedbackFooter .feedbackFooter__form input {
     padding: 18px 22px;
@@ -1301,10 +1352,10 @@ input::placeholder {
     display: none;
   }
   .popup {
-    left: 0%;
+    left: 3%;
     top: 0%;
     transform: none;
-    width: 100vw;
+    width: 95%;
   }
   .popup .popupFeedback__form {
     padding: 1em;

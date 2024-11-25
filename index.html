@@ -15,6 +15,7 @@
 </head>
 <body>
     <div class="burgerMenu">
+        <div class="closeBtn"><img src="./img/closeBtn.svg" alt=""></div>
         <div class="inner">
             <div class="navBurger">
                 <a href="#" class="nav__item">Главная</a>
@@ -89,7 +90,7 @@
             </div>
         </div>
     </header>
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="inner">
             <div class="hero__main">
                 <div class="content">
@@ -103,7 +104,7 @@
             </div>
         </div>
     </section>
-    <section class="adv">
+    <section class="adv" id="adv">
         <div class="container">
             <div class="inner">
                 <div class="adv__title">
@@ -142,7 +143,7 @@
             </div>
         </div>
     </section>
-    <section class="consulting">
+    <section class="consulting"  id="consulting">
         <div class="container">
             <div class="inner">
                 <div class="consulting__header">
@@ -323,7 +324,7 @@
             <div class="feedbackCenter__note">Отправляя заявку вы соглашаетесь с действующей политикой конфиденциальности и обработки персональных данных</div>
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <div class="inner">
             <div class="image">
                 <img src="./img/about_img.png" alt="">
@@ -359,7 +360,7 @@
             </div>
         </div>
     </section>
-    <section class="team">
+    <section class="team" id="team">
         <div class="inner swiper">
             <div class="team__header">
                 <div class="team__headerTitle">
@@ -431,7 +432,7 @@
             </div>
         </div>
     </section>
-    <section class="clients">
+    <section class="clients"  id="clients">
         <div class="inner">
             <div class="clients__header">
                 <div class="clients__headerTitle">
@@ -442,14 +443,14 @@
                 </div>
             </div>
             <div class="clients__list">
-                <div class="clients__row">
+                <div class="clients__row"  draggable="true">
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                 </div>
-                <div class="clients__row">
+                <div class="clients__row"  draggable="true">
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
                     <div class="clients__item"><img src="./img/clients_1.png" alt=""></div>
@@ -500,12 +501,12 @@
                                 НАВИГАЦИЯ
                             </h4>
                             <ul>
-                                <li><a href="#">Начало</a></li>
-                                <li><a href="#">Наши преимущества</a></li>
-                                <li><a href="#">Услуги</a></li>
-                                <li><a href="#">О компании</a></li>
-                                <li><a href="#">Специалисты</a></li>
-                                <li><a href="#">Наши клиенты</a></li>
+                                <li><a href="#hero">Начало</a></li>
+                                <li><a href="#adv">Наши преимущества</a></li>
+                                <li><a href="#consulting">Услуги</a></li>
+                                <li><a href="#about">О компании</a></li>
+                                <li><a href="#team">Специалисты</a></li>
+                                <li><a href="#clients">Наши клиенты</a></li>
                             </ul>
                         </div>
                         <div class="footer__contact">
