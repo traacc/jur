@@ -560,13 +560,11 @@ input::placeholder {
   background-color:  #1544AC;
   position: relative;
 }
-.numbers::after {
+.numbers .inner .numbers__list::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 125px;
-  left: 60%;
-  transform: translateX(-50%);
   bottom: 0;
   background-image: url("./img/numbers_bg.svg");
   background-repeat: no-repeat;
@@ -575,6 +573,7 @@ input::placeholder {
   display: flex;
   color: #fff;
   height: 500px;
+  position: relative;
 }
 .numbers .inner .numbers__list .numbers__item {
   height: 100%;
@@ -1266,8 +1265,8 @@ input::placeholder {
     padding-left: 1em;
     padding-right: 1em;
   }
-  .numbers::after {
-    height: 35px;
+  .numbers .inner .numbers__list::after {
+    height: 32px;
     left: 0;
     bottom: 0;
     background-size: contain;
