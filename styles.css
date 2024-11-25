@@ -591,6 +591,12 @@ input::placeholder {
   padding-left: 1em;
   padding-right: 1em;
 }
+.numbers .inner .numbers__list .numbers__item:first-child {
+  border-left: none;
+}
+.numbers .inner .numbers__list .numbers__item:last-child {
+  border-right: none;
+}
 .numbers .inner .numbers__list .numbers__item:nth-child(even) {
   align-content: center;
 }
