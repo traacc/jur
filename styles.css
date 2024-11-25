@@ -106,7 +106,7 @@ section {
   background-color: #1B1B1B;
   color:#fff;
 
-  padding: 22px 115px 22px 70px;
+  padding: 22px 95px 22px 70px;
 
   border: none;
   border-radius: 40px;
@@ -119,7 +119,7 @@ section {
 .btn::before {
   content: '';
   position: absolute;
-  right: 55px;
+  right: 42px;
   top: 50%;
   transform: translateY(-50%);
   width: 43px;
@@ -298,6 +298,9 @@ section.hero {
   color: #9B9B9B;
 
 }
+section.consulting {
+  margin-bottom: 3em;
+}
 .consulting .consulting__header {
   display: flex;
   justify-content: space-between;
@@ -392,6 +395,7 @@ section.hero {
   display: none;
 }
 section.runningLine {
+  margin-top: 0em;
   margin-bottom: 1em;
 }
 .runningLine {
@@ -524,6 +528,10 @@ input::placeholder {
 .about .inner .image {
   flex-shrink: 0;
   position: relative;
+  
+}
+.about .inner .image img{
+  border-radius: 10px;
 }
 .about .inner .content {
   text-align: justify;
@@ -921,7 +929,7 @@ input::placeholder {
   width: 100%;
 }
 .popupFeedback .popupFeedback__form .btn::before {
-  right: 30%;
+  right: 27%;
 }
 .popupFeedback .popupFeedback__note {
   font-size: 0.65rem;
@@ -939,10 +947,22 @@ input::placeholder {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.popup  .popup__header::before {
+  content: '';
+  position: absolute;
+  background-color: rgb(28, 39, 76, .7);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
 .popup  .popup__header .title {
   padding: 2em 1em;
   font-size: 1.25rem;
   font-weight: 500;
+  z-index: 10;
+  position: relative;
 }
 
 .popup  .popup__header .closeBtn {
@@ -951,6 +971,7 @@ input::placeholder {
   right: 15px;
   cursor: pointer;
   width: 16px;
+  z-index: 20;
 }
 .popup  .popup__header .closeBtn img {
   width: 100%;
@@ -1006,6 +1027,12 @@ input::placeholder {
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 50;
+}
+@media (max-width: 1920px) {
+  .about .inner .image img {
+    border-radius: 0 10px 10px 0;
+  }
+
 }
 @media (max-width: 966px) {
 
@@ -1262,6 +1289,9 @@ input::placeholder {
     padding: 18px 22px;
     height: 48px;
   }
+  .feedbackFooter .feedbackFooter__form .sendForm::before {
+    right: 20%;
+  }
   .feedbackFooter .feedbackFooter__question::after {
     display: none;
   }
@@ -1279,11 +1309,22 @@ input::placeholder {
     max-height: 230px;
     overflow-y: scroll;
   }
-
+  .popup .popupFeedback__form .btn::before {
+    right: 20%;
+  }
   .popup .popupFeedback__form .inputRow {
     flex-direction: column;
   }
   .popup .popupFeedback__form input {
     padding: 1em;
+  }
+  .popupFeedback {
+    width: 90%;
+  }
+  .popupFeedback .popupFeedback__form {
+    padding: 1em 1.2em;
+  }
+  .popupFeedback .popupFeedback__form .btn::before {
+    right: 18%;
   }
 }
