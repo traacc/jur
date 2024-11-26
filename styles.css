@@ -1220,6 +1220,10 @@ input::placeholder {
     width: 2em;
     height: 2em;
   }
+  .header {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
   .header .header__contacts {
     align-items: center;
   }
